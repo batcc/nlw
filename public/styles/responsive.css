@@ -1,0 +1,47 @@
+@media (max-width:900px) {/*Define que para aparelhos que mostrem a pag com uma largura maxima de 900 px, as 
+    configuracoes serao ajustadas para aparecer melhor nesses dispositivos, ex: tables, celulares..)*/
+    #page-home{
+        background-position: 70vw;
+    }
+    #page-home .content{
+        align-items: center;
+        text-align: center;
+    }
+    #page-home header a{
+        position: absolute;/*A posicao absoluta é como se ele criasse uma folha de papel em cima de outra.
+        entao se libera algumas outras propriedades,como vc poder dar um novo posicionamento de acordo com as bordas
+        (top, left, right, bottom)*/
+        bottom: 40px;
+
+        left:50%;
+        transform: translateX(-50%);/*Truque para centralizar o elemento solto, jogamos e depois transladamos o x para cima dele,
+        entao achasse o centro dele.*/
+    }
+    #page-home main {
+        align-items: center;
+    }
+    #page-search-results .cards{
+        grid-template-columns: 1fr;
+    }
+    #page-search-results .cards img{
+        height: 250px;
+    }
+    #page-create-point .field-group{
+        flex-direction: column;
+    }
+    #page-create-point .field-group .field + .field{
+        margin-left: 0;
+    }
+}
+@media (min-width:1700px) { /*Quando a pagiuna estiver sendo mostrada numa tela com 1700px ou maiores, serao aplicadas as novas regras.*/
+    #page-home{
+        background-position: 40vw ;
+    }
+
+}
+@media (max-height:760px) {/*Quando a pagina estiver sendo exibida numa tela de altura maxima de 760px*/
+
+    #page-home{
+        background-position-y: 200px;/*Quando a tela fica menor o y que antes era bottom, nao mexe mais*/
+    }
+}

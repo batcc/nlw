@@ -1,0 +1,112 @@
+#page-home{
+    height: 100vh;
+
+    background: url("../icones/home-background.svg")  no-repeat;
+    background-position: 35vw bottom;
+}
+#page-home .content{/*o content tem dois filhos, o header e o main dentro dele, 
+    colocar ele em flex e dps direcionar para coluna ajuda na hr de determinar o "crescimento" de cada um deles.*/
+    width: 90%;
+    max-width: 1100px;
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column ;
+}
+#page-home header{
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    margin-top: 45px;
+}
+/* Colocou em display flex o "a" para que todos os elementos, no caso o span, 
+ficassem na mesma linha*/
+#page-home header a {
+    display: flex;
+    color: var(--title-color);
+    font-weight: 700;
+    
+}
+#page-home header a span{
+    margin-right: 16px;
+    display: flex;
+    background-image:url("../icones/log-in.svg") ;
+
+    width: 20px;
+    height: 20px;
+
+}
+#page-home main{
+    max-width: 560px;
+    flex: 1;/* flex=1 significa que ele vai ficar automatico preenchendo td que ele 
+    puder naquele espaco da coluna ou linha q foi destinado a ele.(Da o tamanho do eixo, no caso y)*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;/*o center ta centralizando na coluna(vertical) 
+    como o space between faz com a linha(horizontal) Poré se eu tiro o valor 1 do flex, ele fica sem espaco pra fazer esse ajuste.*/
+
+
+}
+#page-home main h1{
+    font-size: 54px;
+    color: var(--title-color); 
+
+}
+#page-home main p{
+    font-size: 24px;
+    line-height: 38px;
+    margin-top: 24px;
+}
+#page-home main a{
+    width: 100%;
+    max-width: 360px;
+    height: 72px;
+
+    border-radius: 8px;
+
+    display:flex;
+    align-items: center;/*Os itens se alinham pq vc denominou um display flex primeiro*/
+
+    margin-top: 40px;
+
+    background: var(--primary-color);
+    transition: 460ms;
+
+    
+}
+#page-home main a:hover{
+    background-color: #2fb86e;
+}
+#page-home main a span{
+    width: 72px;
+    height: 72px;
+
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+
+    background-color: rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;/* O align items e o justify alinharam no centro o background usado no ::after*/
+}
+#page-home main a span::after{
+    content: "";
+    background-image: url(../icones/search.svg);
+    /*Por estar dentro do span, a imagem nao aparece se vc nao ajustar, entao no caso determinamos uma 
+    largura e altura pro elemento e colocamos um display flex no "pai"dele que é o page-home main span.*/
+
+    width: 20px;
+    height: 20px;
+}
+#page-home main a strong{/*Mais uma caixa (2) criada dentro do elemento a, para ajustar o tamanho do 2 elemento, 
+    sendo o primeiro elemento o span, que recebeu a img de lupa da pesquisa, para que o texto do restante do elemento a
+    fique centralizado eu aplico um display flex=1, porque o elemento pai que é o "#page-home main a"ja esta
+    disposto em display flex. A caixa "strong"ja tem como caracteristica a font bold.*/
+    flex:1;
+    color:white;
+    text-align: center;
+
+}
